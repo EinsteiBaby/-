@@ -1,0 +1,94 @@
+.content {
+  margin: 0.5rem;
+  font-size: 0.8rem;
+  color: #3d3d3d;
+}
+
+.pending {
+  margin-top: 3rem;
+}
+
+.passed {
+  margin-top: 3rem;
+}
+
+.refused {
+  margin-top: 3rem;
+}
+
+.header {
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eee;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding-bottom: 0.3rem;
+}
+
+.pendingInfo {
+  background-color: #fff;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.body {
+  color: #999;
+}
+
+.body view {
+  padding-top: 0.3rem;
+}
+
+.body text {
+  float: right;
+}
+
+.demo-margin-right {
+  float: right;
+  vertical-align: middle;
+}
+
+.header text {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 70%;
+}
+
+.hide1 {
+  display: none;
+}
+
+.hide2 {
+  display: none;
+}
+
+.hide3 {
+  display: none;
+}
+
+.passedInfo {
+  background-color: #fff;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+}
+
+.refusedInfo {
+  background-color: #fff;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+}
+
+.nodata image {
+  position: absolute;
+  width: 140px;
+  left: calc(50% - 60px);
+  height: 140px;
+  top: 35%;
+}

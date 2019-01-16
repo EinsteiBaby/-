@@ -1,0 +1,70 @@
+<!-- 顶部头像资料 -->
+<view class="header">
+  <view class="info">
+    <view class="photo">
+      <image src='{{headImg}}'></image>
+    </view>
+    <view class="detail">
+      <view>{{nickName}}</view>
+      <view class="signature">{{signature}}</view>
+    </view>
+  </view>
+</view>
+<view>
+  <!-- 记录使用天数/签到等功能 -->
+  <view class="credit">
+    <view class="inner">
+      <i-row i-class="demo-row">
+        <i-col span="8" i-class="demo-col">
+          <!-- 账单总数 -->
+          <view class="billCount">
+            <view class="count">0</view>
+            <view class="txt">账单总数</view>
+          </view>
+        </i-col>
+        <i-col span="8" i-class="demo-col light">
+          <!-- 使用天数 -->
+          <view class="useDay">
+            <view class="count">0</view>
+            <view class="txt">使用天数</view>
+          </view>
+        </i-col>
+        <i-col span="8" i-class="demo-col">
+          <!-- 我的积分 -->
+          <view class="integral">
+            <view class="count">0</view>
+            <view class="txt">我的积分</view>
+          </view>
+        </i-col>
+      </i-row>
+    </view>
+  </view>
+  <!-- 功能列表 -->
+  <view class="func">
+    <i-cell title="编辑资料" is-link bindtap="edit">
+      <i-icon class="iconfont icon-bianji" slot="icon" style='color:#fcc133;padding-right:0.6rem;padding-left:0.5rem' /></i-cell>
+    <i-cell title="意见反馈" is-link bindtap="feedback">
+      <i-icon class="iconfont icon-fankui-" slot="icon" style='color:#ee9303;padding-right:0.6rem;padding-left:0.5rem' /></i-cell>
+    <i-cell title="联系我们" is-link bindtap="contact">
+      <i-icon class="iconfont icon-lianxikefu" slot="icon" style='color:#d17d22;padding-right:0.6rem;padding-left:0.5rem' /></i-cell>
+    <i-cell title="帮助" is-link bindtap="help">
+      <i-icon class="iconfont icon-bangzhudeng-xianxing" slot="icon" style='color:#ed6b1d;padding-right:0.6rem;padding-left:0.5rem' /></i-cell>
+  </view>
+  <view class="exit" style='display:{{exitShow}}'>
+    <i-cell title="注销" bindtap="exit">
+      <i-icon class="iconfont icon-zhuxiao" slot="icon" style='color:#C40;padding-right:0.6rem;padding-left:0.5rem' /></i-cell>
+  </view>
+</view>
+<!-- 如果小程序未授权则展示这个界面 -->
+<view style='display:{{isToLogin}}'>
+  <view class="outter">
+    <view class="inner_">
+      <image src='../../img/logo.png'></image>
+      <view class="wel">点击下方登录按钮获取更多便捷管理~</view>
+      <wux-button type="energized" bind:tap="tologin">去登录</wux-button>
+      <view class="doubt" bindtap='call'>有疑问?/我也想用</view>
+    </view>
+  </view>
+</view>
+<!-- 底部tabBar -->
+<tabbar tabbar="{{tabbar}}"></tabbar>

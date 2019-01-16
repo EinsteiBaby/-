@@ -1,0 +1,175 @@
+page {
+  position: fixed;
+}
+
+.photo image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 5rem;
+  border: 0.1rem solid #fff;
+}
+
+.info {
+  background-color: #ffc900;
+  position: absolute;
+  width: 100%;
+  height: 8rem;
+}
+
+.photo {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  left: 1rem;
+}
+
+.detail {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: 1rem;
+  left: 6.5rem;
+  font-size: 0.8rem;
+}
+
+.signature {
+  color: #666;
+  font-size: 0.7rem;
+}
+
+.credit {
+  background-color: #fff;
+  position: absolute;
+  top: 5.5rem;
+  left: calc(50% - 350rpx);
+  border-radius: 0.2rem;
+  height: 5rem;
+  width: 700rpx;
+  box-shadow: 1px 1px 5px #f90;
+  text-align: center;
+}
+
+.inner {
+  margin-top: 1rem;
+}
+
+.func {
+  position: absolute;
+  width: 100%;
+  top: 11.5rem;
+}
+
+.exit {
+  position: absolute;
+  width: 100%;
+  top: 25rem;
+}
+
+@font-face {
+  font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_966168_zbn655ddkob.eot?t=1545025509700'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_966168_zbn655ddkob.eot?t=1545025509700#iefix') format('embedded-opentype'),
+         /* IE6-IE8 */ url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+         url('//at.alicdn.com/t/font_966168_zbn655ddkob.ttf?t=1545025509700') format('truetype'),
+         /* chrome,
+         firefox,
+         opera,
+         Safari,
+         Android,
+         iOS 4.2+*/ url('//at.alicdn.com/t/font_966168_zbn655ddkob.svg?t=1545025509700#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-lianxikefu:before {
+  content: "\e668";
+  font-weight: bold;
+}
+
+.icon-bianji:before {
+  content: "\e61e";
+}
+
+.icon-zhuxiao:before {
+  content: "\e66c";
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.icon-bangzhudeng-xianxing:before {
+  content: "\e797";
+  font-weight: bold;
+}
+
+.icon-fankui-:before {
+  content: "\e645";
+  font-weight: bold;
+}
+
+.txt {
+  font-size: 0.8rem;
+}
+
+.count {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.billCount {
+  border-right: 1px solid #eee;
+}
+
+.useDay {
+  border-right: 1px solid #eee;
+}
+
+.outter {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.inner_ {
+  position: absolute;
+  width: 700rpx;
+  height: 500rpx;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  left: calc(50% - 350rpx);
+  top: 250rpx;
+}
+
+.inner_ image {
+  margin-top: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.inner_ button {
+  margin-top: 80rpx;
+  width: 550rpx !important;
+  border-radius: 0.1 !important;
+}
+
+.wel {
+  margin-top: 1.5rem;
+}
+
+.doubt {
+  margin-top: 0.3rem;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: underline;
+}

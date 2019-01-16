@@ -1,0 +1,102 @@
+<!-- 顶部tab标签 -->
+<i-tabs current="{{ current }}" bindchange="handleChange" color="#ffc900" fixed>
+  <i-tab key="tab1" title="待审核" count="{{pengding_num}}"></i-tab>
+  <i-tab key="tab2" title="已过审"></i-tab>
+  <i-tab key="tab3" title="未过审"></i-tab>
+</i-tabs>
+<!-- 待处理 -->
+<view class="pending" style='display:{{dp1}}'>
+  <view class="content">
+    <!-- 一条待审核信息 -->
+    <view class="pendingInfo" wx:for="{{datasource1}}" wx:for-index="index" wx:for-item="item" wx:key="item" bindtap='toPending' data-id="{{ item.bill_id }}" >
+      <view class="header">
+        <text>流水号:{{item.bill_no}}</text>
+        <van-button size="small" class="demo-margin-right" type='using' data-id="{{ item.bill_id }}">{{ item.payment_status }}</van-button>
+      </view>
+      <view class="body">
+        <view>实际付款人:
+          <text>{{ item.payment_name }}</text>
+        </view>
+        <view>款项接收人:
+          <text>{{ item.receive_name }}</text>
+        </view>
+        <view>付款时间:
+          <text>{{ item.payment_date }}</text>
+        </view>
+        <view>付款金额:
+          <text style='color:#C60;font-size:0.9rem;'>{{ item.payment_amount }}</text>
+          <text style='font-size:0.9rem;color:#C60'>¥</text>
+        </view>
+      </view>
+    </view>
+    <view class="nodata" style='display:{{pendingDP}}'>
+      <image src='../../img/nodata2.png'></image>
+    </view>
+    <i-load-more class="{{ isShow1 ? '' : 'hide1' }}" />
+    <i-load-more tip="大家都有底线" loading="{{ false }}" class="{{ loadEnd1 ? '':'hide1' }}" />
+  </view>
+</view>
+<!-- 已通过 -->
+<view class="passed" style='display:{{dp2}}'>
+  <view class="content">
+    <!-- 一条过审信息 -->
+    <view class="passedInfo" wx:for="{{datasource2}}" wx:for-index="index" wx:for-item="item" wx:key="item" bindtap='clientdetail' data-id="{{ item.bill_id }}">
+      <view class="header">
+        <text>流水号:{{item.bill_no}}</text>
+        <van-button size="small" class="demo-margin-right" type='primary' data-id="{{ item.bill_id }}">{{ item.payment_status }}</van-button>
+      </view>
+      <view class="body">
+        <view>实际付款人:
+          <text>{{ item.payment_name }}</text>
+        </view>
+        <view>款项接收人:
+          <text>{{ item.receive_name }}</text>
+        </view>
+        <view>付款时间:
+          <text>{{ item.payment_date }}</text>
+        </view>
+        <view>付款金额:
+          <text style='color:#C60;font-size:0.9rem;'>{{ item.payment_amount }}</text>
+          <text style='font-size:0.9rem;color:#C60'>¥</text>
+        </view>
+      </view>
+    </view>
+    <view class="nodata" style='display:{{passedDP}}'>
+      <image src='../../img/nodata2.png'></image>
+    </view>
+    <i-load-more class="{{ isShow2 ? '' : 'hide2' }}" />
+    <i-load-more tip="大家都有底线" loading="{{ false }}" class="{{ loadEnd2 ? '':'hide2' }}" />
+  </view>
+</view>
+<!-- 已拒绝 -->
+<view class="refused" style='display:{{dp3}}'>
+  <view class="content">
+    <!-- 一条已拒绝信息 -->
+    <view class="refusedInfo" wx:for="{{datasource3}}" wx:for-index="index" wx:for-item="item" wx:key="item" bindtap='clientdetail' data-id="{{ item.bill_id }}">
+      <view class="header">
+        <text>流水号:{{item.bill_no}}</text>
+        <van-button size="small" class="demo-margin-right" type='danger' data-id="{{ item.bill_id }}">{{ item.payment_status }}</van-button>
+      </view>
+      <view class="body">
+        <view>实际付款人:
+          <text>{{ item.payment_name }}</text>
+        </view>
+        <view>款项接收人:
+          <text>{{ item.receive_name }}</text>
+        </view>
+        <view>付款时间:
+          <text>{{ item.payment_date }}</text>
+        </view>
+        <view>付款金额:
+          <text style='color:#C60;font-size:0.9rem;'>{{ item.payment_amount }}</text>
+          <text style='font-size:0.9rem;color:#C60'>¥</text>
+        </view>
+      </view>
+    </view>
+    <view class="nodata" style='display:{{refusedDP}}'>
+      <image src='../../img/nodata2.png'></image>
+    </view>
+    <i-load-more class="{{ isShow3 ? '' : 'hide3' }}" />
+    <i-load-more tip="大家都有底线" loading="{{ false }}" class="{{ loadEnd3 ? '':'hide3' }}" />
+  </view>
+</view>

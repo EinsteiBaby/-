@@ -1,0 +1,50 @@
+page {
+  position: fixed;
+}
+
+.title {
+  position: absolute;
+  top: 0.8rem;
+  font-size: 0.9rem;
+  background-color: #fff;
+  width: 100vw;
+}
+
+.content {
+  position: absolute;
+  width: 100vw;
+  top: 5rem;
+}
+
+.span {
+  background-color: #ffc900;
+  width: 0.3rem;
+  height: 1.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.title text {
+  vertical-align: middle;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  color: #333;
+  font-weight: bold;
+  padding-right: 0.5rem;
+}
+
+.icon {
+  display: inline-block;
+  position: absolute;
+  top: 15rpx;
+  color: #ffc900;
+}
+
+.title_ {
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}

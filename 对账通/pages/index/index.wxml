@@ -1,0 +1,37 @@
+<!-- 如果小程序已经授权则展示这个界面 -->
+<!-- 顶部轮播图 要点加入代码；indicator-dots="true"-->
+<view class="header">
+  <swiper class='bannerSwiper' previous-margin="54rpx" next-margin='54rpx' indicator-dots="true" autoplay="true" indicator-color='#B5B5B5' indicator-active-color='#fff' interval='3000' duration='500' circular='true'>
+    <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+      <swiper-item>
+        <image class="{{index==xindex?'imageBanner':'imageBanner_small'}}" src="{{item}}" id='{{item.url}}' bindtap='imageClick'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="content" style='display:{{isShowIndex}}'>
+  <i-row i-class="demo-row light">
+    <i-col span="12" i-class="demo-col" wx:for="{{menuData}}" wx:for-index="index" wx:for-item="item" wx:key="item" bindtap="{{item.menu_address}}">
+        <image src='{{item.menu_ico}}'></image>
+        <view style="margin-bottom:0.5rem;">{{item.menu_caption}}</view>
+    </i-col>
+    <!-- <i-col span="12" i-class="demo-col light" bindtap="payment">
+        <image src='../../img/payment.png'></image>
+        <view>付款记录</view>
+      </i-col>-->
+  </i-row>
+  <!-- 付款记录/我的账单 -->
+</view>
+<!-- 如果小程序未授权则展示这个界面 -->
+<view style='display:{{isToLogin}}'>
+  <view class="outter">
+    <view class="inner">
+      <image src='../../img/logo.png'></image>
+      <view class="wel">点击下方登录按钮获取更多便捷管理~</view>
+      <wux-button type="energized" bind:tap="tologin">去登录</wux-button>
+      <view class="doubt" bindtap='call'>有疑问?/我也想用!</view>
+    </view>
+  </view>
+</view>
+<!-- 底部tabBar -->
+<tabbar tabbar="{{tabbar}}"></tabbar>

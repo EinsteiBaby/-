@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "意见反馈",
+  "usingComponents": {
+    "wux-button": "../../wuxdist/button/index",
+    "i-rate": "../../iviewdist/rate/index",
+    "i-input": "../../iviewdist/input/index"
+  }
+}

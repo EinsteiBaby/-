@@ -1,0 +1,89 @@
+page {
+  position: fixed;
+}
+
+.header {
+  background-color: #fff;
+  height: 310rpx;
+}
+
+.content {
+  position: fixed;
+  margin-top: 1rem;
+  width: 100%;
+  background-color: #fff;
+  font-size: 0.8rem;
+  color: #333;
+  text-align: center;
+}
+
+.content image {
+  margin-top: 0.5rem;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.imageBanner {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.imageBanner_small {
+  width: 94%;
+  height: 90%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  position: absolute;
+  bottom: 0;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+}
+
+.loginbtn {
+  position: absolute;
+  top: 325px;
+  left: 140px;
+  z-index: 9999;
+}
+
+.outter {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+.inner{
+  position: absolute;
+  width: 700rpx;
+  height: 500rpx;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  left: calc(50% - 350rpx);
+  top:250rpx;
+}
+.inner image{
+  margin-top: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.inner button{
+  margin-top: 80rpx;
+  width: 550rpx !important;
+  border-radius: 0.1 !important;
+}
+.wel{
+  margin-top: 1.5rem;
+}
+.doubt{
+  margin-top: 0.3rem;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: underline;
+}

@@ -1,0 +1,65 @@
+<view class="leaderContent" style='padding-bottom:2.5rem' wx:for="{{datasource}}" wx:for-index="index" wx:for-item="item" wx:key="item">
+  <!-- 第一段信息 -->
+  <view class="header">
+    <text>客户基本信息</text>
+    <text style='float:right;border:none;color:#C40;margin-right:0.8rem;display:{{statusDP}}'>{{item.check_status}}</text>
+    <view class="headerContent">
+      <van-field value="{{ item.short_name }}" type="text" label="客户简称" required border="{{ false }}" bind:change="shortName" disabled/>
+      <van-field value="{{ item.long_name }}" type="text" label="客户全称" required border="{{ false }}" bind:change="fullName" disabled/>
+      <van-field value="{{ item.client_name }}" type="text" label="客户类型" required border="{{ false }}" disabled />
+    </view>
+  </view>
+  <!-- 第二段信息 -->
+  <view class="secondSection">
+    <view class="secondContent">
+      <van-field value="{{ item.relation_name }}" type="text" label="联系人" border="{{ false }}" bind:change="relation_man" disabled required/>
+      <van-field value="{{ item.mobile }}" type="text" label="联系电话" border="{{ false }}" bind:change="relation_phone" disabled required/>
+      <van-field value="{{ item.use_code }}" type="text" label="账号名称" border="{{ false }}" bind:change="account" required disabled/>
+      <van-field value="{{ item.address }}" type="textarea" label="联系地址" border="{{ false }}" bind:change="relation_add" disabled required/>
+    </view>
+  </view>
+  <!-- 第三段信息 -->
+  <view class="projectInfo">
+    <view class="projectContent">
+      <van-field value="{{ item.project_name }}" type="text" label="工程信息" border="{{ false }}" bind:change="projectInfo" disabled required/>
+    </view>
+  </view>
+  <!-- 第四段信息 -->
+  <view class="proof">
+    <van-field value="相关照片" border="false" icon="browsing-history" icon-class="icon" disabled/>
+    <view class="previePhoto">
+      <image wx:for="{{item.file_path}}" wx:for-index="index" wx:for-item="item" wx:key="item" src='{{item.file_path}}' bindtap="biggerImg" data-url="{{item.file_path}}"></image>
+    </view>
+  </view>
+  <!-- 第五段信息 -->
+  <view class="thirdSection">
+    <view class="thirdContent">
+      <!-- <van-field value="{{ item.remark }}" label="备注" type="textarea" rows="1" autosize border="{{ false }}" bind:change="remark" disabled placeholder="暂未填写" /> -->
+      <!-- <i-input value="{{ item.remark }}" type="textarea" title="备注" maxlength="100" bind:change="remark" disabled placeholder="暂未填写" /> -->
+      <text style='padding-right:3.5rem;padding-left:1.2rem;'>备注</text>
+      <text style='display:{{item.remark == "" ? "none" : "show" }}'>{{ item.remark }}</text>
+      <text style='display:{{item.remark == "" ? "show" : "none" }}'>暂未填写</text>
+    </view>
+  </view>
+  <view class="map">
+    <text>地图</text>
+    <!-- <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange"
+      show-location style="width: 100%; height: 300px;"></map> -->
+    <van-button size="using" class="demo-margin-right" style='float:right;vertical-align:middle;margin-right:0.5rem' type='small' bindtap="map" data-id="{{client_id}}">点击查看</van-button>
+  </view>
+</view>
+<view class="footer" style='display:{{isBoss}}'>
+  <!-- <button bindtap="refusing" style='background-color:#fff;border:1px solid #ffc900;width:50%;border-radius:0;color:#ffc900;'>拒绝</button>
+  <button bindtap="passing" style='background-color:#ffc900;border:1px solid #ffc900;width:50%;border-radius:0;color:#fff;'>通过</button> -->
+  <van-button type="using" block custom-class="demo-margin-right" bindtap="refusing" plain>拒绝</van-button>
+  <van-button type="using" block custom-class="demo-margin-right" bindtap="passing">通过</van-button>
+</view>
+<!-- 拒绝弹出层 -->
+<view class="feedback">
+  <wux-popup position="bottom" class-names="slideInUp" visible="{{ visible2 }}" bind:close="onClose2">
+    <view style='height:2rem'></view>
+    <i-input value="{{ ret_remark }}" type="textarea" title="存在问题:" placeholder="请输入拒绝理由(最多100字)" maxlength="100" bind:change='ret_remark' />
+    <view style='height:2rem'></view>
+    <van-button type="using" block custom-class="demo-margin-right" bindtap="sub">确定</van-button>
+  </wux-popup>
+</view>

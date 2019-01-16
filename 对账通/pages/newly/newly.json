@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "新增",
+  "usingComponents": {
+    "van-cell": "../../vantdist/cell/index",
+    "van-field": "../../vantdist/field/index",
+    "wux-upload": "../../wuxdist/upload/index",
+    "i-button": "../../iviewdist/button/index",
+    "wux-button": "../../wuxdist/button/index",
+    "i-input": "../../iviewdist/input/index",
+    "van-button": "../../vantdist/button/index"
+  }
+}

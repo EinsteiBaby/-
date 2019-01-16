@@ -1,0 +1,28 @@
+<view class="title">
+  <view class="span"></view>
+  <text>收款详情</text>
+  <van-icon custom-class="icon" name="debit-pay" size="20px" />
+</view>
+<view class="content">
+  <view class="info" wx:for="{{datasource}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <i-input value="{{item.bill_drawee_name}}" type="text" title="合同买受人" disabled/>
+    <i-input value="{{item.payment_type}}" type="text" title="付款方式" disabled/>
+    <i-input value="{{item.payment_name}}" type="text" title="付款账户名" disabled/>
+    <i-input value="{{item.receive_name}}" type="text" title="收款账户名" disabled/>
+    <i-input value="{{item.payment_date}}" type="text" title="付款时间" disabled/>
+    <i-input value="{{item.payment_remark}}" type="text" title="备注" disabled/>
+    <i-input value="{{item.payment_status}}" type="text" title="审核结果" disabled error/>
+    <i-input value="{{item.bill_check_remark}}" type="text" title="审核意见" disabled/>
+    <i-input value="{{item.payment_amount}}" type="text" title="付款金额" disabled/>
+    <i-input value="{{item.payment_repay}}" type="text" title=">分期款" disabled/>
+    <view class="photo">
+      <text style='display:block;border-bottom:0.5px solid #eee;padding-bottom:10px'>付款凭证</text>
+      <image wx:for="{{imgArray}}" wx:for-index="index" wx:for-item="item" wx:key="item" src="{{item.file_path}}" data-url="{{item.file_path}}" bindtap="biggerImg"></image>
+    </view>
+    <view class="map">
+      <view>地图</view>
+      <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange"
+        show-location style="width: 100%; height: 300px;"></map>
+    </view>
+  </view>
+</view>

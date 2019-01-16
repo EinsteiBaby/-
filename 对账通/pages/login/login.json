@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "对账通",
+  "usingComponents": {
+    "van-field": "../../vantdist/field/index",
+    "wux-button": "../../wuxdist/button/index",
+    "i-radio": "../../iviewdist/radio/index",
+    "i-radio-group": "../../iviewdist/radio-group/index",
+    "i-input": "../../iviewdist/input/index"
+  }
+}

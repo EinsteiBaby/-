@@ -1,0 +1,25 @@
+<view class="title">
+  <view class="span"></view>
+  <text>我的账单</text>
+  <van-icon custom-class="icon" name="description" size="20px" />
+</view>
+<view class="content">
+  <view wx:for="{{billData}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <i-input value="{{item.bill_drawee_name}}" type="text" title="合同买受人" right disabled/>
+    <!-- <i-input value="2018-11月" type="text" title="账单周期" disabled right/> -->
+    <picker mode="date" fields="month" value="{{date}}" bindchange="billPeriod">
+      <view class="picker">
+            <van-cell value="{{date}}" is-link>
+      <view slot="title">
+        <view class="title_">账单周期</view>
+        <van-tag type="danger">选择</van-tag>
+      </view>
+    </van-cell>
+      </view>
+    </picker>
+    <i-input value="{{item.repayment}}" type="text" title="{{date}}月还款金额" disabled right/>
+    <i-input value="{{item.arrears}}" type="text" title="截止{{date}}月总欠款金额" disabled right/>
+    <i-input value="{{item.over_amount}}" type="text" title="{{date}}月逾期金额" disabled right/>
+  </view>
+  <i-load-more tip="没有更多数据了哦" loading="{{ false }}" />
+</view>

@@ -1,0 +1,164 @@
+.content {
+  margin-top: 0.8rem;
+  background-color: #fff;
+}
+
+.proof {
+  background-color: #fff;
+}
+
+.uploadProof {
+  padding: 0.5rem;
+  margin-left: 0.3rem;
+}
+
+.submitBtn {
+  margin-top: 2.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.title {
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.paymentcount {
+  background-color: #fff;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.paymenttotal {
+  float: right;
+  margin-right: 50rpx;
+}
+
+.count {
+  color: #c40;
+  font-size: 36rpx;
+}
+
+.outter {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+  z-index: 999999999;
+}
+
+.inner {
+  position: absolute;
+  width: 700rpx;
+  height: 500rpx;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  left: calc(50% - 350rpx);
+  top: 250rpx;
+}
+
+.inner image {
+  margin-top: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.inner button {
+  margin-top: 80rpx;
+  width: 550rpx !important;
+  border-radius: 0.1 !important;
+}
+
+.wel {
+  margin-top: 1.5rem;
+}
+
+.doubt {
+  margin-top: 0.3rem;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: underline;
+}
+
+.leaderContent {
+  margin-top: 0.8rem;
+}
+
+.header {
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+.header text {
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-left: 0.8rem;
+  padding-left: 1rem;
+  border-left: 5px solid #ffc900;
+  color: #ffc900;
+}
+
+.headerContent {
+  border-top: 1px solid #eee;
+  font-size: 0.8rem;
+  padding-top: 0.3rem;
+  margin-top: 0.3rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.secondSection {
+  background-color: #fff;
+  font-size: 0.8rem;
+  padding-top: 0.3rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.secondContent {
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+
+.thirdSection {
+  background-color: #fff;
+  font-size: 0.8rem;
+  padding-top: 0.3rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.thirdContent {
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 999999999999999;
+}
+
+.footer button {
+  width: 100%;
+}
+
+.projectInfo {
+  background-color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.projectContent {
+  padding-left: 0.8rem;
+}

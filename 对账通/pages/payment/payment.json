@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "付款记录",
+  "usingComponents": {
+    "i-drawer": "../../iviewdist/drawer/index",
+    "i-button": "../../iviewdist/button/index",
+    "van-field": "../../vantdist/field/index",
+    "i-row": "../../iviewdist/row/index",
+    "i-col": "../../iviewdist/col/index",
+    "van-search": "../../vantdist/search/index",
+    "wux-button": "../../wuxdist/button/index",
+    "wux-icon": "../../wuxdist/icon/index",
+    "i-load-more": "../../iviewdist/load-more/index"
+  }
+}

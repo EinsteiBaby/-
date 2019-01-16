@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的客户",
+  "usingComponents": {
+    "i-tabs": "../../iviewdist/tabs/index",
+    "i-tab": "../../iviewdist/tab/index",
+    "van-button": "../../vantdist/button/index",
+    "i-load-more": "../../iviewdist/load-more/index"
+  }
+}

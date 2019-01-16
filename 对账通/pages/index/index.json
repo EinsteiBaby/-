@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "tabbar": "../../tabbarComponent/tabbar",
+    "i-row": "../../iviewdist/row/index",
+    "i-col": "../../iviewdist/col/index",
+    "wux-button": "../../wuxdist/button/index"
+  }
+}

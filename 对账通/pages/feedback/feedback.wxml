@@ -1,0 +1,15 @@
+<view class="content1">
+  <i-input value="{{ name }}" title="姓名" placeholder="请输入您的姓名" bind:change="getName" maxlength='50' />
+  <i-input value="{{ phoneNum }}" type="number" title="联系电话" placeholder="请输入您的手机号" bind:change="getPhoneNum" maxlength='50' />
+</view>
+<view class="content2">
+  <i-input value="{{ feedback }}" type="textarea" title="反馈意见" mode="wrapped" placeholder="有什么想说的尽管来咆哮吧~" bind:change='getFeedBack' />
+</view>
+<view class='rate'>
+  <i-rate bind:change="onChange" value="{{starIndex}}">
+    {{starText}}
+  </i-rate>
+</view>
+<view class="submitBtn">
+  <wux-button block type="energized" bind:tap="submit">提交</wux-button>
+</view>

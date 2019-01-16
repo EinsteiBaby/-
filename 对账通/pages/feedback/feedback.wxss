@@ -1,0 +1,26 @@
+.content1 {
+  background-color: #fff;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.content2 {
+  background-color: #fff;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.submitBtn{
+  margin-top: 2rem;
+  background-color: #ffc900;
+  border-radius: 0.3rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.rate{
+  background-color: #fff;
+  padding:0.5rem;
+}

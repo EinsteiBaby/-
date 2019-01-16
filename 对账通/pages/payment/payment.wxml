@@ -1,0 +1,78 @@
+<!-- 筛选功能 -->
+<view class="demo">
+  <view class="header">
+    <icon class="icon-sousuo iconfont"></icon>
+    <input bindinput="bindInput" placeholder='请输入关键字' value="{{ inputValue }}"></input>
+    <icon class="icon-shaixuan iconfont" bindtap="filtrate"></icon>
+  </view>
+  <!-- <i-button bind:click="filtrate" type="ghost">筛选</i-button> -->
+
+  <i-drawer mode="right" visible="{{filtrate}}" bind:close="filtrate">
+    <view class="demo-container">
+      <!-- 筛选内容 -->
+      <view class="filtrateContent">
+        <!-- 起始日期/结束日期 -->
+        <picker mode="date" value="{{ begindate }}" bindchange="begindate">
+          <view class="picker">
+            <van-field value="{{ begindate }}" label="起始日期:" icon="pending-deliver" icon-class="icon" disabled />
+          </view>
+        </picker>
+        <picker mode="date" value="{{ enddate }}" bindchange="enddate">
+          <view class="picker">
+            <van-field value="{{ enddate }}" label="结束日期:" icon="pending-deliver" icon-class="icon" disabled />
+          </view>
+        </picker>
+        <!-- 最小金额/最大金额 -->
+        <van-field value="{{ minMoney }}" type="digit" label="最小金额:" icon="gold-coin" icon-class="icon" clearable bind:change="minMoney" />
+        <van-field value="{{ maxMoney }}" type="digit" label="最大金额:" icon="gold-coin" icon-class="icon" clearable bind:change="maxMoney" />
+        <!-- 付款方式 -->
+        <picker bindchange="payWay" value="{{payway}}" range="{{payWay}}">
+          <view class="picker">
+            <van-field value="{{ payway }}" label="付款方式:" icon="exchange-record" icon-class="icon" disabled />
+          </view>
+        </picker>
+        <!-- 收款人 -->
+        <van-field value="{{ payee }}" bind:change="payee" label="收款人:" icon="contact" icon-class="icon" />
+        <!-- 审核状态 -->
+        <picker bindchange="checkStatus" value="{{checkstatus}}" range="{{checkStatus}}">
+          <view class="picker">
+            <van-field value="{{ checkstatus }}" label="审核状态:" icon="discount" icon-class="icon" disabled />
+          </view>
+        </picker>
+        <!-- 确认/取消 按钮 -->
+        <view class="btn">
+          <i-button bind:click="cancelBtn" long="true" style='display:inline-block;width:50%'>取消</i-button>
+          <i-button bind:click="confirmBtn" type="warning" long="true" style='display:inline-block;width:50%'>确定</i-button>
+        </view>
+      </view>
+    </view>
+  </i-drawer>
+</view>
+<!-- ---------以上筛选--------- -->
+<!-- 内容 -->
+<view class="content">
+  <!-- 一条记录 -->
+  <view class="info" bindtap="info" wx:for="{{datasource}}" wx:for-index="index" wx:for-item="item" wx:key="index" data-id='{{item.bill_id}}'>
+    <view class="num">
+      <text>流水号:{{item.bill_no}}</text>
+      <text class="checkStatus">{{item.payment_status}}</text>
+    </view>
+    <view class="infoContent">
+      <view>实际付款人:
+        <text>{{item.payment_name}}</text>
+      </view>
+      <view>款项接收人:
+        <text>{{item.receive_name}}</text>
+      </view>
+      <view>付款时间:
+        <text>{{item.payment_date}}</text>
+      </view>
+      <view>付款金额:
+        <text style='font-size:0.9rem;color:#C60'>{{item.payment_amount}}</text>
+        <text style='font-size:0.9rem;color:#C60'>¥</text>
+      </view>
+    </view>
+  </view>
+  <i-load-more class="{{ isShow ? '' : 'hide' }}" />
+  <i-load-more tip="大家都有底线" loading="{{ false }}" class="{{ loadEnd ? '':'hide' }}" />
+</view>

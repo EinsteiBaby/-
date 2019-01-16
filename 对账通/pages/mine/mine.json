@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "tabbar": "../../tabbarComponent/tabbar",
+    "i-cell": "../../iviewdist/cell/index",
+    "i-row": "../../iviewdist/row/index",
+    "i-col": "../../iviewdist/col/index",
+    "wux-button": "../../wuxdist/button/index"
+  }
+}

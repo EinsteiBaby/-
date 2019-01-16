@@ -1,0 +1,104 @@
+<view style='display:{{isClient}}'>
+  <view class="content">
+    <van-field value="{{ buyer }}" label="合同买受人:" clearable icon="arrow" icon-class="icon" disabled bind:input="buyer" />
+    <picker bindchange="payway" value="{{index}}" range="{{wayArray}}">
+      <van-field value="{{ payway }}" label="付款方式:" clearable icon="arrow" icon-class="icon" disabled />
+    </picker>
+    <van-field value="{{payer}}" label="实际付款人:" border="false" clearable bind:input="payer" />
+    <van-field value="{{receiver}}" label="款项接收人:" border="false" clearable bind:input="receiver" />
+    <picker bindchange="paytime" mode="date" value="{{paytime}}">
+      <van-field value="{{ paytime }}" label="付款时间:" clearable icon="arrow" icon-class="icon" disabled />
+    </picker>
+    <van-field value="{{remark}}" label="备注:" type="textarea" rows="1" autosize border="false" clearable bind:input="remark" />
+    <!-- <van-field placeholder="占位符" border="false" disabled/> -->
+    <!-- <van-field placeholder="占位符" border="false" disabled/> -->
+    <van-field label="分期款:" type="digit" value="{{instalment}}" clearable border="false" bind:input="instalment" />
+  </view>
+  <view class="proof">
+    <van-field value="付款凭证" border="false" icon="photograph" icon-class="icon" disabled/>
+    <view class="uploadProof">
+      <wux-upload list-type="picture-card" url="https://zjwaterws.cnjsjd.net" bind:change="takeProof" bind:remove="onRemove" bind:complete="onComplete" bind:preview="onPreview">
+        <text>Upload</text>
+      </wux-upload>
+    </view>
+  </view>
+  <view class="paymentcount">
+    <view style='margin-left:0.7rem;border-top:0.5px solid #eee'>
+      <text class="paymenttotal">付款合计<text style='color:#c40;font-size:30rpx'>¥</text>
+      <text class="count">{{total}}</text>元</text>
+    </view>
+  </view>
+  <!-- 提交按钮 -->
+  <view class="submitBtn">
+    <wux-button block type="energized" bindtap='submit'>提交</wux-button>
+    <!-- <i-button bind:click="handleClick" type="warning" long="true">提交</i-button> -->
+  </view>
+</view>
+<!-- ------------------------------------------------------------------------------------ -->
+<!-- 拥有审核权的账户登录 -->
+<view style='display:{{isLeader}}'>
+  <view class="leaderContent" style='padding-bottom:2.5rem'>
+    <!-- 第一段信息 -->
+    <view class="header">
+      <text>客户基本信息</text>
+      <view class="headerContent">
+        <van-field value="{{ shortName }}" type="text" label="客户简称" placeholder="请输入客户简称" required border="{{ false }}" bind:change="shortName" />
+        <van-field value="{{ fullName }}" type="text" label="客户全称" placeholder="请输入客户全称" required border="{{ false }}" bind:change="fullName" />
+        <picker bindchange="clientKind" range='{{clientKind}}' value="{{ index }}">
+          <van-field value="{{ clientkind }}" type="text" label="客户类型" placeholder="请选择客户类型" required border="{{ false }}" disabled icon="wap-nav" icon-class="icon" />
+        </picker>
+      </view>
+    </view>
+    <!-- 第二段信息 -->
+    <view class="secondSection">
+      <view class="secondContent">
+        <van-field value="{{ relation_man }}" type="text" label="联系人" placeholder="请输入联系人" border="{{ false }}" bind:change="relation_man" required/>
+        <van-field value="{{ relation_phone }}" type="number" label="联系电话" placeholder="请输入联系电话" border="{{ false }}" bind:change="relation_phone" required/>
+        <van-field value="{{ account }}" type="text" label="账号名称" placeholder="作为您的登录账号" border="{{ false }}" bind:change="account" required/>
+        <van-field value="{{ relation_add }}" type="text" label="联系地址" placeholder="请输入联系地址" border="{{ false }}" bind:change="relation_add" required/>
+      </view>
+    </view>
+    <!-- 第三段信息 -->
+    <view class="projectInfo">
+      <view class="projectContent">
+        <van-field value="{{ projectInfo }}" type="text" label="工程信息" placeholder="请输入工程信息" border="{{ false }}" bind:change="projectInfo" required/>
+      </view>
+    </view>
+    <!-- 第四段信息 -->
+    <view class="proof">
+      <van-field value="相关照片" border="false" icon="photograph" icon-class="icon" required disabled/>
+      <view class="uploadProof">
+        <wux-upload list-type="picture-card" url="https://zjwaterws.cnjsjd.net" bind:change="takeProof" bind:remove="onRemove" bind:complete="onComplete" bind:preview="onPreview">
+          <text>Upload</text>
+        </wux-upload>
+      </view>
+    </view>
+    <!-- 第五段信息 -->
+    <view class="thirdSection">
+      <view class="thirdContent">
+        <!-- <van-field value="{{ remark }}" label="备注" type="textarea" placeholder="请输入备注" rows="1" autosize border="{{ false }}" bind:change="remark" /> -->
+        <i-input value="{{ remark_new }}" type="textarea" title="备注" placeholder="请输入备注(最多100字)" maxlength="100" bind:change="remark_new" />
+      </view>
+    </view>
+    <cover-view class="footer">
+      <button bindtap="previewMsg" style='background-color:#ffc900;border-color:#ffc900;width:100%;border-radius:0;color:#fff;'>预览</button>
+      <!-- <van-button type="using" size="large" block custom-class="demo-margin-right" bindtap="previewMsg">预览</van-button> -->
+    </cover-view>
+  </view>
+</view>
+<!-- ------------------------------------------------------------------------------ -->
+<!-- 没有审核能力的用户 -->
+<!-- <view style='display:{{isSalesman}}'>
+
+</view> -->
+<!-- 如果小程序未授权则展示这个界面 -->
+<view style='display:{{isToLogin}}'>
+  <view class="outter">
+    <view class="inner">
+      <image src='../../img/logo.png'></image>
+      <view class="wel">点击下方登录按钮获取更多便捷管理~</view>
+      <wux-button type="energized" bind:tap="tologin">去登录</wux-button>
+      <view class="doubt" bindtap='call'>有疑问?/我也想用</view>
+    </view>
+  </view>
+</view>

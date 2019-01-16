@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "预览客户信息",
+  "usingComponents": {
+    "van-cell": "../../vantdist/cell/index",
+    "van-field": "../../vantdist/field/index",
+    "wux-upload": "../../wuxdist/upload/index",
+    "i-button": "../../iviewdist/button/index",
+    "i-input": "../../iviewdist/input/index",
+    "wux-button": "../../wuxdist/button/index",
+    "van-button": "../../vantdist/button/index"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "付款详情",
+  "usingComponents": {
+    "i-input": "../../iviewdist/input/index",
+    "van-icon": "../../vantdist/icon/index"
+  }
+}

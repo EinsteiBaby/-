@@ -1,0 +1,44 @@
+<view class="leaderContent" style='padding-bottom:2.5rem'>
+  <!-- 第一段信息 -->
+  <view class="header">
+    <text>客户基本信息</text>
+    <view class="headerContent">
+      <van-field value="{{ shortName }}" type="text" label="客户简称" required border="{{ false }}" bind:change="shortName" disabled/>
+      <van-field value="{{ fullName }}" type="text" label="客户全称" required border="{{ false }}" bind:change="fullName" disabled/>
+      <van-field value="{{ clientkind }}" type="text" label="客户类型" required border="{{ false }}" disabled />
+    </view>
+  </view>
+  <!-- 第二段信息 -->
+  <view class="secondSection">
+    <view class="secondContent">
+      <van-field value="{{ relation_man }}" type="text" label="联系人" border="{{ false }}" bind:change="relation_man" disabled placeholder="暂未填写" required/>
+      <van-field value="{{ relation_phone }}" type="text" label="联系电话" border="{{ false }}" bind:change="relation_phone" disabled placeholder="暂未填写" required/>
+      <van-field value="{{ account }}" type="text" label="账号名称" placeholder="作为您的登录账号" border="{{ false }}" bind:change="account" required disabled/>
+      <van-field value="{{ relation_add }}" type="textarea" label="联系地址" border="{{ false }}" bind:change="relation_add" disabled placeholder="暂未填写" required/>
+    </view>
+  </view>
+  <!-- 第三段信息 -->
+  <view class="projectInfo">
+    <view class="projectContent">
+      <van-field value="{{ projectInfo }}" type="text" label="工程信息" placeholder="请输入工程信息" border="{{ false }}" disabled bind:change="projectInfo" required/>
+    </view>
+  </view>
+  <!-- 第四段信息 -->
+  <view class="proof">
+    <van-field value="相关照片" border="false" icon="browsing-history" icon-class="icon" disabled/>
+    <view class="previePhoto">
+      <image wx:for="{{imgArray}}" wx:for-index="index" wx:for-item="item" wx:key="item" src='{{item}}' bindtap="biggerImg" data-url="{{item}}"></image>
+    </view>
+  </view>
+  <!-- 第五段信息 -->
+  <view class="thirdSection">
+    <view class="thirdContent">
+      <!-- <van-field value="{{ remark }}" label="备注" type="textarea" rows="1" autosize border="{{ false }}" bind:change="remark" disabled placeholder="暂未填写" /> -->
+      <i-input value="{{ remark }}" type="textarea" title="备注" maxlength="100" bind:change="remark" disabled placeholder="暂未填写" />
+    </view>
+  </view>
+  <cover-view class="footer">
+    <!-- <van-button type="using" size="large" block custom-class="demo-margin-right" bindtap="submit">提交</van-button> -->
+    <button bindtap="submit" style='background-color:#ffc900;border-color:#ffc900;width:100%;border-radius:0;color:#fff;' disabled='{{isSub}}'>提交</button>
+  </cover-view>
+</view>

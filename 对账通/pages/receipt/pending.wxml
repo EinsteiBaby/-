@@ -1,0 +1,40 @@
+<view class="title">
+  <view class="span"></view>
+  <text>收款详情</text>
+  <van-icon custom-class="icon" name="debit-pay" size="20px" />
+</view>
+<view class="content">
+  <view class="info" wx:for="{{datasource}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <i-input value="{{item.bill_drawee_name}}" type="text" title="合同买受人" disabled/>
+    <i-input value="{{item.payment_type}}" type="text" title="付款方式" disabled/>
+    <i-input value="{{item.payment_name}}" type="text" title="付款账户名" disabled/>
+    <i-input value="{{item.receive_name}}" type="text" title="收款账户名" disabled/>
+    <i-input value="{{item.payment_date}}" type="text" title="付款时间" disabled/>
+    <i-input value="{{item.payment_remark}}" type="text" title="备注" disabled/>
+    <i-input value="{{item.payment_status}}" type="text" title="审核结果" disabled error/>
+    <!-- <i-input value="{{item.bill_check_remark}}" type="text" title="审核意见" disabled/> -->
+    <i-input value="{{item.payment_amount}}" type="text" title="付款金额" disabled/>
+    <i-input value="{{item.payment_repay}}" type="text" title=">分期款" disabled/>
+    <view class="photo">
+      <text style='display:block;border-bottom:0.5px solid #eee;padding-bottom:10px'>付款凭证</text>
+      <image wx:for="{{imgArray}}" wx:for-index="index" wx:for-item="item" wx:key="item" src="{{item.file_path}}" data-url="{{item.file_path}}" bindtap="biggerImg"></image>
+    </view>
+    <view class="map">
+      <text>地图</text>
+      <van-button size="using" class="demo-margin-right" style='float:right;vertical-align:middle;margin-right:0.5rem' type='small' bindtap="map" data-id="{{bill_id}}">点击查看</van-button>
+    </view>
+  </view>
+</view>
+<view class="footer" style='display:{{isBoss}}'>
+  <van-button type='using' plain block custom-class="demo-margin-right" bindtap="refusing">拒绝</van-button>
+  <van-button type="using" block custom-class="demo-margin-right" bindtap="passing">通过</van-button>
+</view>
+<!-- 拒绝弹出层 -->
+<view class="feedback">
+  <wux-popup position="bottom" class-names="slideInUp" visible="{{ visible2 }}" bind:close="onClose2">
+    <view style='height:2rem'></view>
+    <i-input value="{{ ret_remark }}" type="textarea" title="存在问题:" placeholder="请输入拒绝理由(最多100字)" maxlength="100" bind:change='ret_remark' />
+    <view style='height:2rem'></view>
+    <van-button type="using" block custom-class="demo-margin-right" bindtap="sub">确定</van-button>
+  </wux-popup>
+</view>

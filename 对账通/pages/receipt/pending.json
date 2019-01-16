@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "收款详情",
+  "usingComponents": {
+    "i-input": "../../iviewdist/input/index",
+    "van-icon": "../../vantdist/icon/index",
+    "wux-popup": "../../wuxdist/popup/index",
+    "van-button": "../../vantdist/button/index"
+  }
+}

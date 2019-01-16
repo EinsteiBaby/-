@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的账单",
+  "usingComponents": {
+    "i-input": "../../iviewdist/input/index",
+    "van-icon": "../../vantdist/icon/index",
+    "i-cell": "../../iviewdist/cell/index",
+    "van-cell": "../../vantdist/cell/index",
+    "van-tag": "../../vantdist/tag/index"
+  }
+}

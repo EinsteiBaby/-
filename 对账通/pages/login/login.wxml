@@ -1,0 +1,27 @@
+<!-- 登录界面logo图标 -->
+<view class="logo">
+  <image src='../../img/logo-shadow.png'></image>
+</view>
+<!-- 用户输入账号/密码框 -->
+<view class="login">
+  <!-- <van-field class="username" value="{{ username }}" label="账号" placeholder="请输入账号" clearable />
+  <van-field value="{{ password }}" label="密码" placeholder="请输入密码" clearable /> -->
+  <view class="username">
+    <i-input value="{{ username }}" i-class="iconfont icon-zhanghu" placeholder="请输入账号" bind:blur="usernameInput" maxlength="50" />
+  </view>
+  <view class="password">
+    <i-input value="{{ userpassword }}" i-class="iconfont icon-mima" type='password' placeholder="请输入密码" bind:change="userpasswordInput" maxlength="50" />
+  </view>
+</view>
+<!-- 自动登录勾选 -->
+<view class="autoLogin">
+    <i-radio position="left" value="自动登录" checked="{{checked}}"bindchange="isAutoLogin"></i-radio>
+</view>
+<!-- 登录按钮 -->
+<view class="loginBtn">
+  <wux-button block open-type="getUserInfo" type="energized" bind:getuserinfo="bindgetUserInfo">登录</wux-button>
+</view>
+<!-- copyRigth -->
+<view class="copyRight">
+  <text>copyRight©️杭州千家网络.All Rights Reserved</text>
+</view>
